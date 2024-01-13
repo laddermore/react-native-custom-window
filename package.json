@@ -1,7 +1,7 @@
 {
   "name": "react-native-custom-window",
   "title": "React Native Custom Window",
-  "version": "0.22.7",
+  "version": "0.22.8",
   "description": "TODO",
   "main": "index.js",
   "files": [
@@ -25,8 +25,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-custom-window.git",
-    "baseUrl": "https://github.com/github_account/react-native-custom-window"
+    "url": "git+https://github.com/laddermore/react-native-custom-window.git",
+    "baseUrl": "https://github.com/laddermore/react-native-custom-window"
   },
   "keywords": [
     "react-native"

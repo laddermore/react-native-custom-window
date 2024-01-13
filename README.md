@@ -1,7 +1,7 @@
 # React Native Custom Window
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=version&message=0.22.7&color=8257E5&labelColor=000000" alt="version 0.22.7" />
+  <img src="https://img.shields.io/static/v1?label=version&message=0.22.8&color=8257E5&labelColor=000000" alt="version 0.22.8" />
   <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
 </p>
 
@@ -33,25 +33,26 @@ react-native link react-native-custom-window
 #### Import
 
 ```javascript
-import { FilePicker } from 'react-native-custom-window';
+import { titleBar } from "react-native-custom-window";
 ```
+
 #### Methods
 
 ```typescript
-  interface TitleBarColorProps {
-    backgroundColor: string;
-    inactiveBackgroundColor?: string;
-    buttonBackgroundColor?: string;
-    buttonInactiveBackgroundColor?: string;
-    buttonForegroundColor?: string;
-    buttonHoverForegroundColor?: string;
-    buttonPressedForegroundColor?: string;
-    buttonInactiveForegroundColor?: string;
-    foregroundColor?: string;
-    inactiveForegroundColor?: string;
-    buttonHoverBackgroundColor?: string;
-    buttonPressedBackgroundColor?: string;
-  }
+interface TitleBarColorProps {
+  backgroundColor: string;
+  inactiveBackgroundColor?: string;
+  buttonBackgroundColor?: string;
+  buttonInactiveBackgroundColor?: string;
+  buttonForegroundColor?: string;
+  buttonHoverForegroundColor?: string;
+  buttonPressedForegroundColor?: string;
+  buttonInactiveForegroundColor?: string;
+  foregroundColor?: string;
+  inactiveForegroundColor?: string;
+  buttonHoverBackgroundColor?: string;
+  buttonPressedBackgroundColor?: string;
+}
 ```
 
 - **enableExtend(): Promise<void>**
@@ -72,29 +73,21 @@ import { FilePicker } from 'react-native-custom-window';
 - **disableExtend(): Promise<void>**
   Disables the window extension, preventing it from going fullscreen.
 
-### FilePicker Module
-
-#### Import
-
-```javascript
-import { FilePicker } from 'react-native-window-file-picker-module';
-```
-
 ### Window Module
 
 #### Import
 
 ```javascript
-import { titleBar } from 'react-native-custom-window';
+import { titleBar } from "react-native-custom-window";
 ```
 
 #### Methods
 
 ```typescript
-  type ISetSize = {
-    width: number;
-    height: number;
-  }
+type ISetSize = {
+  width: number;
+  height: number;
+};
 ```
 
 - **setSize(props: ISetSize): void**
@@ -114,9 +107,8 @@ import { titleBar } from 'react-native-custom-window';
 #### Import
 
 ```javascript
-import { FilePicker } from 'react-native-window-file-picker-module';
+import { FilePicker } from "react-native-window-file-picker-module";
 ```
-
 
 #### Method
 
@@ -126,27 +118,24 @@ import { FilePicker } from 'react-native-window-file-picker-module';
 ## Example
 
 ```javascript
-import React from 'react';
-import { View, Button } from 'react-native';
-import { fullscreen, FilePicker } from 'react-native-window-file-picker-module';
+import React from "react";
+import { View, Button } from "react-native";
+import { fullscreen, FilePicker } from "react-native-window-file-picker-module";
 
 const App = () => {
   const handlePickFile = async () => {
     try {
       const filePath = await FilePicker.pickFile();
-      console.log('Selected file path:', filePath);
+      console.log("Selected file path:", filePath);
     } catch (error) {
-      console.error('Error while picking a file:', error);
+      console.error("Error while picking a file:", error);
     }
   };
 
   return (
     <View>
       <Button title="Go Fullscreen" onPress={() => fullscreen.enableExtend()} />
-      <Button
-        title="Pick a File"
-        onPress={handlePickFile}
-      />
+      <Button title="Pick a File" onPress={handlePickFile} />
     </View>
   );
 };
